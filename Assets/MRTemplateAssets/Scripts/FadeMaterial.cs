@@ -16,7 +16,7 @@ public class FadeMaterial : MonoBehaviour
         if (m_FadeCoroutine != null)
             StopCoroutine(m_FadeCoroutine);
 
-        m_FadeCoroutine = StartCoroutine(FadeBuiltIn(visible));
+        m_FadeCoroutine = StartCoroutine(FadeURP(visible));
     }
 
     //Fade Coroutine
