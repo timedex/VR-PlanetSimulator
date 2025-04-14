@@ -15,7 +15,7 @@ public class Botones : MonoBehaviour
         for (int i = 0; i < planeta.Length; i++)
         {
             GameObject botones;
-            botones = Instantiate(Boton, Contenedor.transform); 
+            botones = Instantiate(Boton, Contenedor.transform);
             botones.name = planeta[i].PlanetaPosicion.ToString();
             botones.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = planeta[i].PlanetaName;
             botones.GetComponent<CrearPlaneta>().Planeta = planeta[i];
