@@ -8,7 +8,7 @@ public class LanzamientoAsteroide : MonoBehaviour
     private Transform pivote;
 
     public GameObject asteroidePrefab;
-    public Transform manoDelJugador; // Asegúrate de asignar el objeto que representa la mano desde el Inspector
+    public Transform manoDelJugador; // Asegï¿½rate de asignar el objeto que representa la mano desde el Inspector
 
     void Awake()
     {
@@ -21,8 +21,8 @@ public class LanzamientoAsteroide : MonoBehaviour
         {
             // Instanciar el asteroide en la mano del jugador
             GameObject asteroide = Instantiate(asteroidePrefab, manoDelJugador.position, Quaternion.identity);
-            // Aplicar una velocidad al asteroide en la dirección de lanzamiento
-            asteroide.GetComponent<Rigidbody>().velocity = velocidadLanzamiento * direccionLanzamiento;
+            // Aplicar una velocidad al asteroide en la direcciï¿½n de lanzamiento
+            asteroide.GetComponent<Rigidbody>().linearVelocity = velocidadLanzamiento * direccionLanzamiento;
             // Restablecer la bandera de lanzar a falso
             lanzar = false;
         }
@@ -30,7 +30,7 @@ public class LanzamientoAsteroide : MonoBehaviour
 
     public void LanzarAsteroide()
     {
-        // Calcular la dirección de lanzamiento
+        // Calcular la direcciï¿½n de lanzamiento
         direccionLanzamiento = manoDelJugador.forward;
         // Indicar que se debe lanzar el asteroide
         lanzar = true;

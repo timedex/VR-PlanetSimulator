@@ -14,7 +14,7 @@ public class OrbitasPlanetas : MonoBehaviour
 
     public Planetas planetas;
     public bool Regresar = false;
-    public GameObject explosionPrefab; // Añadir la referencia al prefab de explosión
+    public GameObject explosionPrefab; // Aï¿½adir la referencia al prefab de explosiï¿½n
     public GameObject canvas;
     void Awake()
     {
@@ -29,11 +29,11 @@ public class OrbitasPlanetas : MonoBehaviour
             canvas.SetActive(true);
         }
 
-        // Añadir eventos para mostrar y ocultar el canvas cuando se agarra y se suelta el planeta
-        var xrGrabInteractable = GetComponent<XRGrabInteractable>();
+        // Aï¿½adir eventos para mostrar y ocultar el canvas cuando se agarra y se suelta el planeta
+        var xrGrabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
         if (xrGrabInteractable == null)
         {
-            xrGrabInteractable = gameObject.AddComponent<XRGrabInteractable>();
+            xrGrabInteractable = gameObject.AddComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
         }
         xrGrabInteractable.selectEntered.AddListener(OnSelectEntered);
         xrGrabInteractable.selectExited.AddListener(OnSelectExited);
@@ -71,7 +71,7 @@ public class OrbitasPlanetas : MonoBehaviour
                 Encender = true;
                 Regresar = false;
                 gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                // Desactivar el canvas cuando el planeta alcanza su órbita
+                // Desactivar el canvas cuando el planeta alcanza su ï¿½rbita
                 if (canvas != null)
                 {
                     canvas.SetActive(false);
@@ -114,7 +114,7 @@ public class OrbitasPlanetas : MonoBehaviour
     private void OnSelectExited(SelectExitEventArgs args)
     {
         var canvas = transform.Find("Canvas").gameObject;
-        if (canvas != null && !Regresar) // Asegurarse de que no estamos en el proceso de regresar a la órbita
+        if (canvas != null && !Regresar) // Asegurarse de que no estamos en el proceso de regresar a la ï¿½rbita
         {
             canvas.SetActive(false);
         }
